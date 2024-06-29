@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ss.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Records</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <a href=".html"> <!--palagay yung file name ng homepage!-->
+                <img src="ss.png" alt="SSS"></a>
+            <p class="PH">Republic of the Philippines</p>
+            <p class="SSS">Social Security System</p>
+        </div>
+
+        <div class="rectangle">
+            <nav>
+                <button onclick="showSection('memInfo')">Retiree</button>
+                <button onclick="showSection('empHisto')">Employment History</button>
+                <button onclick="showSection('depChild')">Dependent Children</button>
+            </nav>
+            <div id="memInfo" class="mem" style="display: block;">
+                <table class="member">
+                    <thead>
+                    <tr>
+                        <th class="ssNo">SS Number</th>
+                        <th class="MemName">Member's Name</th>
+                        <th class="MemAdd">Address</th>
+                        <th class="PostCode">Postal Code</th>
+                        <th class="DOB">Date of Birth</th>
+                        <th class="POB">Place of Birth</th>
+                        <th class="gender">Gender</th>
+                        <th class="CStatus">Civil Status</th>
+                        <th class="Cnumber">Contact No.</th>
+                        <th class="AdPension">Pension Advance?</th>
+                        <th class="receivePension">Receiving Pension?</th>
+                        <th class="typePen">Pension Type</th>
+                        <th class="act">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="membersTable">
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="empHisto" class="emp" style="display: none;">
+                <table class="empHisto">
+                    <thead>
+                    <tr>
+                        <th class="ssNo">SS Number</th>
+                        <th class="EmpName">Name of Employer</th>
+                        <th class="EmpAdd">Address</th>
+                        <th class="periodEmp">Period of Employment</th>
+                        <th class="act">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="empHistoTable">
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="depChild" class="dep" style="display: none;">
+                <table class="depChild">
+                    <thead>
+                    <tr>
+                        <th class="ssNo">SS Number</th>
+                        <th class="ChildName">Name of Child</th>
+                        <th class="CLegitimacy">Legitimacy</th>
+                        <th class="ChildDOB">Date of Birth</th>
+                        <th class="ChildAdd">Address</th>
+                        <th class="act">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="depChildTable">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentSection = 'memInfo';
+
+        function showSection(sectionId) {
+            if (currentSection !== sectionId) {
+                document.getElementById(currentSection).style.display = 'none';
+                document.getElementById(sectionId).style.display = 'block';
+                currentSection = sectionId;
+            } else {
+                document.getElementById(sectionId).style.display = 'none';
+                currentSection = '';
+            }
+        }
+    </script>
+
+</body>
+</html>

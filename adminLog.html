@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="ss.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Log In | i-Retiro</title>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <a href=".html"> <!--palagay yung file name ng homepage!-->
+                <img src="ss.png" alt="SSS"></a>
+            <p class="PH">Republic of the Philippines</p>
+            <p class="SSS">Social Security System</p>
+        </div>
+
+        <div class="login-rectangle">
+            <div class="log">
+            <h2 class="login">Log In</h2>
+            </div>
+            <div class="admLog">
+                <form id="LogInAdm">
+
+                    <div><label for="username">Username</label></div>
+                    <input type="text" id="username" name="uName" placeholder="Username" required>
+                    <div><label for="passMem">Password</label></div>
+                    <input type="password" name="Password" id="passMem" placeholder="Password" required>
+
+                    <div><button type="button" onclick="login()">Log In</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('passMem').value;
+
+            if (username && password) { 
+                window.location.href = 'adminDashboard.html';
+            } else {
+                alert('Please enter both username and password.');
+            }
+        }
+    </script>
+</body>
+</html>
